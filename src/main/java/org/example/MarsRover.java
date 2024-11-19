@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class MarsRover {
 
     private int x;
@@ -11,7 +13,11 @@ public class MarsRover {
     }
 
     public String executeCommand(String command) {
-        analysisCommand(command);
+        if (command.length() > 1) {
+            Arrays.stream(command.split(" ")).forEach(this::analysisCommand);
+        } else {
+            analysisCommand(command);
+        }
         return showStatusReport();
     }
 
