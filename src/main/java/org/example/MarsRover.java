@@ -13,6 +13,6 @@ public class MarsRover {
     }
 
     public String showStatusReport() {
-        return null;
+        return this.x + " " + this.y + " " + this.direction;
     }
 }
