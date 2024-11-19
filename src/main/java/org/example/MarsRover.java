@@ -40,6 +40,15 @@ public class MarsRover {
     }
 
     private void move() {
+        if (this.direction == Diretion.N) {
+            this.y++;
+        } else if (this.direction == Diretion.E) {
+            this.x++;
+        } else if (this.direction == Diretion.S) {
+            this.y--;
+        } else {
+            this.x--;
+        }
 
     }
 }
