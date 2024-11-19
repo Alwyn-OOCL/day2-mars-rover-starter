@@ -172,4 +172,12 @@ class MarsRoverTest {
         String statusReport = marsRover.executeCommand(command);
         assertEquals("-1: 0: E", statusReport);
     }
+
+    @Test
+    void should_move_west_and_orient_south_orient_north_and_move_west_and_turn_left() {
+        MarsRover marsRover = new MarsRover();
+        String command = "LML";
+        String statusReport = marsRover.executeCommand(command);
+        assertEquals("-1: 0: S", statusReport);
+    }
 }
