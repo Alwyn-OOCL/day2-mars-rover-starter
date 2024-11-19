@@ -108,7 +108,8 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover();
         String command = "R";
         marsRover.executeCommand(command);
-        String statusReport = marsRover.executeCommand("M");
+        command = "M";
+        String statusReport = marsRover.executeCommand(command);
         assertEquals("1: 0: E", statusReport);
     }
 
@@ -118,7 +119,18 @@ class MarsRoverTest {
         String command = "R";
         marsRover.executeCommand(command);
         marsRover.executeCommand(command);
-        String statusReport = marsRover.executeCommand("M");
+        command = "M";
+        String statusReport = marsRover.executeCommand(command);
         assertEquals("0: -1: S", statusReport);
+    }
+
+    @Test
+    void should_move_west_when_orient_west_and_move() {
+        MarsRover marsRover = new MarsRover();
+        String command = "L";
+        marsRover.executeCommand(command);
+        command = "M";
+        String statusReport = marsRover.executeCommand(command);
+        assertEquals("-1: 0: W", statusReport);
     }
 }
