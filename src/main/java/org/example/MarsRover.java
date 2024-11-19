@@ -13,13 +13,7 @@ public class MarsRover {
     }
 
     public String executeCommand(String command) {
-        if ("L".equals(command)) {
-            turnLeft();
-        } else if ("R".equals(command)) {
-            turnRight();
-        } else {
-            move();
-        }
+        analysisCommand(command);
         return showStatusReport();
     }
 
@@ -39,7 +33,7 @@ public class MarsRover {
         this.direction = DirectionUtils.DIRECTIONS.get(nextIndex);
     }
 
-    private void move() {
+    private void moveForward() {
         if (this.direction == Diretion.N) {
             this.y++;
         } else if (this.direction == Diretion.E) {
@@ -49,6 +43,15 @@ public class MarsRover {
         } else {
             this.x--;
         }
+    }
 
+    private void analysisCommand(String command) {
+        if ("L".equals(command)) {
+            turnLeft();
+        } else if ("R".equals(command)) {
+            turnRight();
+        } else {
+            moveForward();
+        }
     }
 }
