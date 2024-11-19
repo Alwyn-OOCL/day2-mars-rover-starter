@@ -1,4 +1,7 @@
-package org.example;
+package org.example.strategy.command;
+
+import org.example.DirectionUtils;
+import org.example.MarsRover;
 
 public class TurnRightCommand implements Command {
 

@@ -1,5 +1,11 @@
 package org.example;
 
+import org.example.strategy.command.Command;
+import org.example.strategy.command.MoveBackCommand;
+import org.example.strategy.command.MoveForwardCommand;
+import org.example.strategy.command.TurnLeftCommand;
+import org.example.strategy.command.TurnRightCommand;
+
 public enum CommandType {
     L(TurnLeftCommand.class),
     R(TurnRightCommand.class),
