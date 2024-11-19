@@ -16,6 +16,14 @@ class MarsRoverTest {
     void should_show_statusReport_when_showStatusReport() {
         MarsRover marsRover = new MarsRover();
         String statusReport = marsRover.showStatusReport();
-        assertEquals("0 0 N", statusReport);
+        assertEquals("0: 0: N", statusReport);
+    }
+
+    @Test
+    void should_face_west_when_orient_north_and_turn_left() {
+        MarsRover marsRover = new MarsRover();
+        String command = "L";
+        String statusReport = marsRover.executeCommand(command);
+        assertEquals("0: 0: W", statusReport);
     }
 }
