@@ -12,4 +12,7 @@ public class MarsRover {
         this.direction = "N";
     }
 
+    public String showStatusReport() {
+        return null;
+    }
 }

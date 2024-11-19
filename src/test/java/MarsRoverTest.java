@@ -11,4 +11,11 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover();
         assertNotNull(marsRover);
     }
+
+    @Test
+    void should_show_statusReport_when_showStatusReport() {
+        MarsRover marsRover = new MarsRover();
+        String statusReport = marsRover.showStatusReport();
+        assertEquals("0 0 N", statusReport);
+    }
 }
