@@ -7,8 +7,6 @@ public class MarsRover {
     private Diretion direction;
 
     public MarsRover() {
-        this.x = 0;
-        this.y = 0;
         this.direction = Diretion.N;
     }
 
@@ -21,51 +19,36 @@ public class MarsRover {
         return this.x + ": " + this.y + ": " + this.direction;
     }
 
-    private void turnLeft() {
-        int currentIndex = DirectionUtils.DIRECTIONS.indexOf(this.direction);
-        int nextIndex = (currentIndex + 3) % 4;
-        this.direction = DirectionUtils.DIRECTIONS.get(nextIndex);
-    }
-
-    private void turnRight() {
-        int currentIndex = DirectionUtils.DIRECTIONS.indexOf(this.direction);
-        int nextIndex = (currentIndex + 1) % 4;
-        this.direction = DirectionUtils.DIRECTIONS.get(nextIndex);
-    }
-
-    private void moveForward() {
-        if (this.direction == Diretion.N) {
-            this.y++;
-        } else if (this.direction == Diretion.E) {
-            this.x++;
-        } else if (this.direction == Diretion.S) {
-            this.y--;
-        } else {
-            this.x--;
-        }
-    }
-
-    private void moveBack() {
-        if (this.direction == Diretion.N) {
-            this.y--;
-        } else if (this.direction == Diretion.E) {
-            this.x--;
-        } else if (this.direction == Diretion.S) {
-            this.y++;
-        } else {
-            this.x++;
-        }
-    }
-
     private void analysisCommand(String command) {
-        if ("L".equals(command)) {
-            turnLeft();
-        } else if ("R".equals(command)) {
-            turnRight();
-        } else if ("M".equals(command)) {
-            moveForward();
-        } else if ("B".equals(command)) {
-            moveBack();
+        CommandType commandType = CommandType.valueOf(command);
+        if (command == null) {
+            return;
         }
+        commandType.getCommandHandlerClass(this).execute();
+    }
+
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public Diretion getDirection() {
+        return direction;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public void setDirection(Diretion direction) {
+        this.direction = direction;
     }
 }
