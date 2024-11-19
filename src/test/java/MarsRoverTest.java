@@ -162,4 +162,14 @@ class MarsRoverTest {
         String statusReport = marsRover.executeCommand(command);
         assertEquals("0: 1: S", statusReport);
     }
+
+    @Test
+    void should_move_west_when_orient_east_and_move_back() {
+        MarsRover marsRover = new MarsRover();
+        String command = "R";
+        marsRover.executeCommand(command);
+        command = "B";
+        String statusReport = marsRover.executeCommand(command);
+        assertEquals("-1: 0: E", statusReport);
+    }
 }
