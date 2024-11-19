@@ -135,10 +135,20 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_move_north_when_orient_south_and_move_back() {
+    void should_move_south_when_orient_south_and_move_back() {
         MarsRover marsRover = new MarsRover();
         String command = "B";
         String statusReport = marsRover.executeCommand(command);
         assertEquals("0: -1: N", statusReport);
+    }
+
+    @Test
+    void should_move_east_when_orient_west_and_move_back() {
+        MarsRover marsRover = new MarsRover();
+        String command = "L";
+        marsRover.executeCommand(command);
+        command = "B";
+        String statusReport = marsRover.executeCommand(command);
+        assertEquals("1: 0: W", statusReport);
     }
 }
