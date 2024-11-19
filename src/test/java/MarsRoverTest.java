@@ -35,4 +35,14 @@ class MarsRoverTest {
         String statusReport = marsRover.executeCommand(command);
         assertEquals("0: 0: S", statusReport);
     }
+
+    @Test
+    void should_face_east_when_orient_south_and_turn_left() {
+        MarsRover marsRover = new MarsRover();
+        String command = "L";
+        marsRover.executeCommand(command);
+        marsRover.executeCommand(command);
+        String statusReport = marsRover.executeCommand(command);
+        assertEquals("0: 0: E", statusReport);
+    }
 }
