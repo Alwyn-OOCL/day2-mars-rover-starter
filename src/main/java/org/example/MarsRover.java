@@ -45,13 +45,27 @@ public class MarsRover {
         }
     }
 
+    private void moveBack() {
+        if (this.direction == Diretion.N) {
+            this.y--;
+        } else if (this.direction == Diretion.E) {
+            this.x--;
+        } else if (this.direction == Diretion.S) {
+            this.y++;
+        } else {
+            this.x++;
+        }
+    }
+
     private void analysisCommand(String command) {
         if ("L".equals(command)) {
             turnLeft();
         } else if ("R".equals(command)) {
             turnRight();
-        } else {
+        } else if ("M".equals(command)) {
             moveForward();
+        } else if ("B".equals(command)) {
+            moveBack();
         }
     }
 }
