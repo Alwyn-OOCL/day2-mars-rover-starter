@@ -1,6 +1,9 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import org.example.strategy.command.Command;
 
 public class MarsRover {
 
@@ -8,7 +11,12 @@ public class MarsRover {
     private int yCoordinate;
     private Diretion direction;
 
+    private final Map<CommandType, Command> commandHandlerMap = new HashMap<>();
+
     public MarsRover() {
+        CommandType[] values = CommandType.values();
+        Arrays.stream(values)
+                .forEach(value -> commandHandlerMap.put(value, value.getCommandHandlerClass(this)));
         this.direction = Diretion.N;
     }
 
@@ -35,8 +43,7 @@ public class MarsRover {
         if (command == null) {
             return;
         }
-        // todo 实例化时机
-        commandType.getCommandHandlerClass(this).execute();
+        commandHandlerMap.get(commandType).execute();
     }
 
 
