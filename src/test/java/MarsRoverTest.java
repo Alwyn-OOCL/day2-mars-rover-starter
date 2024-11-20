@@ -174,7 +174,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_move_west_and_orient_south_orient_north_and_move_west_and_turn_left() {
+    void should_move_west_and_orient_south_when_orient_north_and_move_west_and_turn_left() {
         MarsRover marsRover = new MarsRover();
         String command = "L M L";
         String statusReport = marsRover.executeCommand(command);
@@ -182,7 +182,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_move_west_and_orient_south_orient_north_and_move_west_and_turn_right() {
+    void should_move_west_and_orient_south_when_orient_north_and_move_west_and_turn_right() {
         MarsRover marsRover = new MarsRover();
         String command = "R M L";
         String statusReport = marsRover.executeCommand(command);
@@ -190,7 +190,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_move_west_and_orient_south_orient_north_and_move_east_and_turn_left() {
+    void should_move_west_and_orient_south_when_orient_north_and_move_east_and_turn_left() {
         MarsRover marsRover = new MarsRover();
         String command = "L B L";
         String statusReport = marsRover.executeCommand(command);
@@ -198,7 +198,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_move_west_and_orient_south_orient_north_and_move_east_and_turn_right() {
+    void should_move_west_and_orient_south_when_orient_north_and_move_east_and_turn_right() {
         MarsRover marsRover = new MarsRover();
         String command = "R B R";
         String statusReport = marsRover.executeCommand(command);
