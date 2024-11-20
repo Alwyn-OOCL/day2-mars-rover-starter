@@ -30,6 +30,7 @@ public class MarsRover {
         if (command == null) {
             return;
         }
+        // todo 实例化时机
         commandType.getCommandHandlerClass(this).execute();
     }
 
