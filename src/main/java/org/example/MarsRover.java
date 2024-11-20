@@ -26,7 +26,12 @@ public class MarsRover {
     }
 
     private void analysisCommand(String command) {
-        CommandType commandType = CommandType.valueOf(command);
+        CommandType commandType;
+        try {
+            commandType = CommandType.valueOf(command);
+        } catch (IllegalArgumentException e) {
+            throw new RuntimeException("Invalid command: " + command);
+        }
         if (command == null) {
             return;
         }
