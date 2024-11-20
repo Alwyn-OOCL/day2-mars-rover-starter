@@ -2,11 +2,12 @@ package org.example.strategy.command;
 
 import org.example.MarsRover;
 
-public class MoveForwardCommand implements Command {
+public class MoveForwardCommand extends MoveCommand implements Command {
 
     private final MarsRover rover;
 
     public MoveForwardCommand(MarsRover rover) {
+        super(rover);
         this.rover = rover;
     }
 
@@ -16,7 +17,7 @@ public class MoveForwardCommand implements Command {
     }
 
     private void moveForward(MarsRover rover) {
-        rover.getDirection().getMoveHandler().moveForward(rover);
+        getMoveHandlerMap().get(rover.getDirection()).moveForward(rover);
     }
 
 }
