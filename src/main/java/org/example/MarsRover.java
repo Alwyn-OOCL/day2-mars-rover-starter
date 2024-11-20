@@ -4,10 +4,8 @@ import java.util.Arrays;
 
 public class MarsRover {
 
-    // todo rename
-    private int x;
-    // todo rename
-    private int y;
+    private int xCoordinate;
+    private int yCoordinate;
     private Diretion direction;
 
     public MarsRover() {
@@ -24,11 +22,10 @@ public class MarsRover {
     }
 
     public String showStatusReport() {
-        return this.x + ": " + this.y + ": " + this.direction;
+        return this.xCoordinate + ": " + this.yCoordinate + ": " + this.direction;
     }
 
     private void analysisCommand(String command) {
-        // todo try catch
         CommandType commandType = CommandType.valueOf(command);
         if (command == null) {
             return;
@@ -38,24 +35,24 @@ public class MarsRover {
     }
 
 
-    public int getX() {
-        return x;
+    public int getxCoordinate() {
+        return xCoordinate;
     }
 
-    public int getY() {
-        return y;
+    public int getyCoordinate() {
+        return yCoordinate;
     }
 
     public Diretion getDirection() {
         return direction;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setxCoordinate(int xCoordinate) {
+        this.xCoordinate = xCoordinate;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setyCoordinate(int yCoordinate) {
+        this.yCoordinate = yCoordinate;
     }
 
     public void setDirection(Diretion direction) {

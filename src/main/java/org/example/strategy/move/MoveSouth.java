@@ -6,12 +6,12 @@ public class MoveSouth implements Move {
 
     @Override
     public void moveBack(MarsRover rover) {
-        rover.setY(rover.getY() + 1);
+        rover.setyCoordinate(rover.getyCoordinate() + 1);
     }
 
     @Override
     public void moveForward(MarsRover rover) {
-        rover.setY(rover.getY() - 1);
+        rover.setyCoordinate(rover.getyCoordinate() - 1);
     }
 
 }
