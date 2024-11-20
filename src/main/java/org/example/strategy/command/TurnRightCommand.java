@@ -17,9 +17,9 @@ public class TurnRightCommand implements Command {
     }
 
     private void turnRight(MarsRover rover) {
-        int currentIndex = DirectionUtils.DIRECTIONS.indexOf(rover.getDirection());
-        int nextIndex = (currentIndex + 1) % 4;
-        rover.setDirection(DirectionUtils.DIRECTIONS.get(nextIndex));
+        int currentDirectionIndex = DirectionUtils.DIRECTIONS.indexOf(rover.getDirection());
+        int nextDirectionIndex = (currentDirectionIndex + 1) % 4;
+        rover.setDirection(DirectionUtils.DIRECTIONS.get(nextDirectionIndex));
     }
 
 }

@@ -17,9 +17,9 @@ public class TurnLeftCommand implements Command {
     }
 
     private void turnLeft(MarsRover rover) {
-        int currentIndex = DirectionUtils.DIRECTIONS.indexOf(rover.getDirection());
-        int nextIndex = (currentIndex + 3) % 4;
-        rover.setDirection(DirectionUtils.DIRECTIONS.get(nextIndex));
+        int currentDirectionIndex = DirectionUtils.DIRECTIONS.indexOf(rover.getDirection());
+        int nextDirectionIndex = (currentDirectionIndex + 3) % 4;
+        rover.setDirection(DirectionUtils.DIRECTIONS.get(nextDirectionIndex));
     }
 
 }
