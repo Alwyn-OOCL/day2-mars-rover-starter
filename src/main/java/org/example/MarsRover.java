@@ -14,6 +14,7 @@ public class MarsRover {
 
     public String executeCommand(String command) {
         if (command.length() > 1) {
+            // todo 用map？
             Arrays.stream(command.split(" ")).forEach(this::analysisCommand);
         } else {
             analysisCommand(command);
