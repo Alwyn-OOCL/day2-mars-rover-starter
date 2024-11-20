@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class MarsRover {
 
+    // todo rename
     private int x;
+    // todo rename
     private int y;
     private Diretion direction;
 
