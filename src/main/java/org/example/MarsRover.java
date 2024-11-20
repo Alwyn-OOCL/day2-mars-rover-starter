@@ -16,7 +16,6 @@ public class MarsRover {
 
     public String executeCommand(String command) {
         if (command.length() > 1) {
-            // todo 用map？
             Arrays.stream(command.split(" ")).forEach(this::analysisCommand);
         } else {
             analysisCommand(command);
@@ -29,6 +28,7 @@ public class MarsRover {
     }
 
     private void analysisCommand(String command) {
+        // todo try catch
         CommandType commandType = CommandType.valueOf(command);
         if (command == null) {
             return;
