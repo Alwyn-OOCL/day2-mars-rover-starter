@@ -21,11 +21,7 @@ public class MarsRover {
     }
 
     public String executeCommand(String command) {
-        if (command.length() > 1) {
-            Arrays.stream(command.split(" ")).forEach(this::analysisCommand);
-        } else {
-            analysisCommand(command);
-        }
+        Arrays.stream(command.split(" ")).forEach(this::analysisCommand);
         return showStatusReport();
     }
 
